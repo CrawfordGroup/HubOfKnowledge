@@ -184,9 +184,9 @@ sub gaussian
   my @y;
   my $i = 0;
   my $tmp = 0;
-  my $constant = 1/(2.296e-39);         #Constant used in calculation of rotatory strengths [ 3 h c (10^3) ln(10) / 32 (pi)^3 N_A ] (from Stephens' paper as well)
+  my $constant = 1/(2.296e-39);         #Constant used in calculation of rotatory strengths [ 3 h c (10^3) ln(10) / 32 (pi)^3 N_A ] in cgs units(from Stephens' paper as well)
   
-  #Programmed equation 8c from Philip J. Stephens' paper (DOI: 10.1002/chir.20733)
+  #Programmed equation (8c) from Philip J. Stephens' paper (DOI: 10.1002/chir.20733)
   for($i=0; $i < $dim; $i++) {
     $tmp = (-(2*(@$x[$i]-$ex)/$fwhm)**2);
     $y[$i] = 2 * $constant * (1/(sqrt($pi)*$fwhm)) * $ex * $ab * exp($tmp);
